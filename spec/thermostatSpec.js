@@ -45,7 +45,7 @@ describe('Thermostat', function() {
     expect(thermostat.isPowerSavingModeOn()).toBe(true);
   });
 
-  it('can be reset to the default temporature', function(){
+  it('can be reset to the default temperature', function(){
     for (var i = 0; i < 6; i++){
       thermostat.up();
     }
