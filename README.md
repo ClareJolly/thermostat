@@ -22,7 +22,7 @@ Build the business logic to model a simple thermostat, and learn to hook it up t
 
 * Open `index.html` in a browser
 
-If you want to be able to save the state of the thermostat you can run a server to host an api
+If you want to be able to save the state of the thermostat you can run a server to host an api (if you don't do this the page with throw an error but will still work)
 
 * install the ruby gems `bundle install`
 * run the server for the api `rackup -p 3111`
