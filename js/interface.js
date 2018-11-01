@@ -1,16 +1,28 @@
 $(document).ready(function() {
   var thermostat = new Thermostat();
 
+  // console.log("checking")
+  // console.log(thermostat.temperature)
+  //
+  // thermostat.temperature = 22
+  //
+  // console.log("checking2")
+  // console.log(thermostat.temperature)
 
-                $.ajax({
-                  type: 'get',
-                  url: 'http://localhost:3111/temperature',
-                  // dataType: 'html',
-                  success: function(result) {
-                    console.log(result)
-                    $('#temperature').text(result);
-                  }
-                });
+  // $.ajax({
+  //   type: 'get',
+  //   url: 'http://localhost:3111/temperature',
+  //   success: function (result) {
+  //   console.log("checking ajax")
+  //   console.log(result)
+  //   console.log(thermostat.temperature)
+  //   console.log(thermostat.energyUsage())
+  //   thermostat.temperature = result
+  //   console.log(thermostat.temperature)
+  //   console.log(thermostat.energyUsage())
+  //   $('#temperature').text(result);
+  //   }
+  // });
 
   updateTemperature();
 
@@ -51,18 +63,25 @@ $(document).ready(function() {
     })
   }
 
-  function updateTempOnServer() {
+  function updateTempOnServer () {
     $.ajax({
       url: 'http://localhost:3111/temp-set',
       type: 'post',
-      data: {temp: thermostat.temperature},
-      success: function( data, textStatus, jQxhr ){
-                   $('#response pre').html( data );
-               },
-               error: function( jqXhr, textStatus, errorThrown ){
-                   console.log( errorThrown );
-               }
-           });
+      data: { temp: thermostat.temperature }
+      });
+  }
+
+  function getTempFromServer () {
+    $.ajax({
+      type: 'get',
+      url: 'http://localhost:3111/temperature',
+      success: function (result) {
+      thermostat.temperature = result
+      $('#temperature').text(result);
+      $('#temperature').text(thermostat.temperature);
+      $('#temperature').attr('class', thermostat.energyUsage());
+      }
+    });
   }
 
   displayWeather('London');
@@ -73,8 +92,12 @@ $(document).ready(function() {
     displayWeather(city);
   })
 
-  function updateTemperature() {
+  function updateTemperature () {
+    getTempFromServer()
+    // console.log("checkA")
+    // console.log(thermostat.temperature)
     $('#temperature').text(thermostat.temperature);
+    // console.log(thermostat.energyUsage())
     $('#temperature').attr('class', thermostat.energyUsage());
 
   };

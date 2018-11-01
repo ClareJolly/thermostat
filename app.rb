@@ -18,9 +18,9 @@ class Thermostat < Sinatra::Base
   end
 
   get '/temperature' do
-    content_type :json
+    # content_type :json
     if @@temp.nil?
-      "20".to_json
+      "20"
     else
       @@temp
     end
