@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Thermostat</title>
+  <script src="js/thermostat.js"></script>
+  <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+  <script src="js/test.js"></script>
+  <link rel="stylesheet" href="css/test.css"/>
+</head>
+<body>
+
+    <section class="left-col">
+      <section class="display">
+        <section id="energyColor" class="medium-usage">
+        <span id="temperature">20</span>
+        <span class="sml-screen-degrees">degrees</span>
+        </section>
+        <section id="buttons">
+          <button id="temperature-up">+</button>
+          <button id="temperature-down">-</button>
+          <button id="temperature-reset">reset</button>
+        </section>
+        <section id="PSM-title" class="medium-usage">
+            <label id="powerSavingModeSwitch">
+          power saving mode</label>
+        </section>
+        <section id="PSM-buttons" class="high-usage medium-usage low-usage">
+          <p><button class="PSM-on" id="powersavingmode-on">on</button></p>
+          <p><button class="PSM-off" id="powersavingmode-off">off</button></p>
+        </section>
+      </section>
+    </section>
+    <section class="right-col">
+      <img src="degrees.svg" class="rotated-text">
+    </section>
+
+    <section>
+      <h1>Current temperature: <span id="current-temperature"></span></h1>
+        <form id="select-city">
+          <input type="text" id="current-city" placeholder="Enter a city">
+          <input type="submit">
+        </form>
+    </section>
+
+
+
+
+</body>
+</html>

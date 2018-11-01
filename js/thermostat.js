@@ -23,7 +23,7 @@ Thermostat.prototype.down = function () {
   if (this.isMinimumTemperature()) {
     return;
   }
-  return this.temperature -= 1;
+  this.temperature -= 1;
 };
 
 Thermostat.prototype.isMinimumTemperature = function () {

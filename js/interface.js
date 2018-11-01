@@ -1,21 +1,35 @@
 $(document).ready(function() {
   var thermostat = new Thermostat();
 
+
+                $.ajax({
+                  type: 'get',
+                  url: 'http://localhost:3111/temperature',
+                  // dataType: 'html',
+                  success: function(result) {
+                    console.log(result)
+                    $('#temperature').text(result);
+                  }
+                });
+
   updateTemperature();
 
   $('#temperature-up').on('click', function() {
     thermostat.up();
     updateTemperature();
+    updateTempOnServer();
   });
 
   $('#temperature-down').on('click', function() {
     thermostat.down();
     updateTemperature();
+    updateTempOnServer();
   });
 
   $('#temperature-reset').on('click', function() {
     thermostat.resetTemperature();
     updateTemperature();
+    updateTempOnServer();
   });
 
   $('#powersavingmode-on').on('click', function() {
@@ -37,6 +51,20 @@ $(document).ready(function() {
     })
   }
 
+  function updateTempOnServer() {
+    $.ajax({
+      url: 'http://localhost:3111/temp-set',
+      type: 'post',
+      data: {temp: thermostat.temperature},
+      success: function( data, textStatus, jQxhr ){
+                   $('#response pre').html( data );
+               },
+               error: function( jqXhr, textStatus, errorThrown ){
+                   console.log( errorThrown );
+               }
+           });
+  }
+
   displayWeather('London');
 
   $('#select-city').submit(function(event) {
@@ -48,5 +76,6 @@ $(document).ready(function() {
   function updateTemperature() {
     $('#temperature').text(thermostat.temperature);
     $('#temperature').attr('class', thermostat.energyUsage());
+
   };
 });
