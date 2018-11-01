@@ -49,12 +49,11 @@ Thermostat.prototype.switchPowerSavingModeOn = function () {
   this.PowerSavingMode = true;
 };
 
-Thermostat.prototype.resetTemperature = function() {
+Thermostat.prototype.resetTemperature = function () {
   this.temperature = this.DEFAULT_TEMPERATURE;
 };
 
-Thermostat.prototype.energyUsage = function() {
-  // console.log(this.temperature)
+Thermostat.prototype.energyUsage = function () {
   if (this.temperature < this.MEDIUM_ENERGY_USAGE_LIMIT) {
     return 'low-usage';
   }

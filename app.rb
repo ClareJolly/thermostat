@@ -1,15 +1,6 @@
 require 'sinatra/base'
-# require "sinatra/cookies"
 
 class Thermostat < Sinatra::Base
-#   helpers Sinatra::Cookies
-#   configure do
-#     use Rack::Session::Pool
-#   # enable :sessions
-#   # set :session_secret, 'secret'
-# end
-
-# require "sinatra/cookies"
 
   before do
     content_type :json
@@ -18,7 +9,6 @@ class Thermostat < Sinatra::Base
   end
 
   get '/temperature' do
-    # content_type :json
     if @@temp.nil?
       "20"
     else

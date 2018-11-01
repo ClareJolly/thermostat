@@ -4,27 +4,35 @@
   <title>Thermostat</title>
   <script src="js/thermostat.js"></script>
   <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+<link href='https://fonts.googleapis.com/css?family=Raleway Dots' rel='stylesheet'>
+  <link href="https://fonts.googleapis.com/css?family=Bungee+Inline" rel="stylesheet">
   <script src="js/interface.js"></script>
-  <link rel="stylesheet" href="css/styles.css"/>
+  <link rel="stylesheet" href="css/test.css"/>
 </head>
 </body>
 <section>
-  <h1 id="temperature"></h1>
+  <center>
+      <div class="center">
+    <div class="current-temp">
+      <h1 id="temperature"></h1>
+      </div>
+
   <p>
     <button id="temperature-up">+</button>
     <button id="temperature-down">-</button>
     <button id="temperature-reset">reset</button>
-    power saving mode is <span id="power-saving-status">on</span>
+    <br />
+    <br />power saving mode is <span id="power-saving-status">on</span><br />
     <button id="powersavingmode-on">PSM on</button>
     <button id="powersavingmode-off">PSM off</button>
   </p>
-</section>
-<section>
-  <h1>Current temperature: <span id="current-temperature"></span></h1>
+<!-- </section>
+<section> -->
+  <h1 id="ct">Current temperature: <span id="current-temperature"></span></h1>
     <form id="select-city">
       <input type="text" id="current-city" placeholder="Enter a city">
       <input type="submit">
-    </form>
+    </form></div></center>
 </section>
 </body>
 </html>

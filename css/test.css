@@ -1,168 +1,111 @@
-@import url('normalize.css');
+section {
+  font-family: 'Bungee inline';
 
-* {
-  padding: 0;
-  margin: 0;
 }
 
-html {
-  height: 100%;
+.low-usage {
+  color: green;
 }
 
-body {
-  height: 100%;
-  width: 100%;
-  font-family: helvetica-bold;
+.medium-usage {
+  color: orange;
 }
 
-.left-col {
-  width: 60%;
-  height: 100%;
-  float: left;
+.high-usage {
+  color: red;
 }
+body {}
 
-.right-col {
-  width: 40%;
-  height: 100%;
-  float: left;
-  background-color: black;
+span {
+  font-size: 20px;
 }
-
-.rotated-text {
-  margin-left: 0em;
-  height: 100%;
+.current-temperature {
+  font-size: 105px;
 }
 
 #temperature {
-  font-size: 15em;
-  line-height: 0;
-  margin-bottom: 3em;
+  font-size: 105px;
 }
 
-.display {
-  text-align: right;
-  height: 50%;
-  margin-top: 25%;
-  margin-right: 2%;
-  margin-left: -1em;
+#ct {
+  font-size: 20px;
 }
 
-#buttons {
-  border: 0;
-  padding-top: 1em;
-  padding-bottom: 1em;
-}
-
-button {
-  border: 0;
-  background-color: inherit;
-  font-size: 2.7em;
-  padding: .1em;
-}
-
-#PSM-title {
-  line-height: 1em;
-  width: 8em
-}
-
-#PSM-buttons p {
-  font-size: .8em;
-}
-
-#PSM-buttons {
-  padding-top: 1em;
-  padding-bottom: 1em;
-}
-
-#powerSavingModeSwitch {
-  padding-left: 1em;
-  background-color: white;
-  font-size: 2em;
-}
-
-.sml-screen-degrees {
-  display: none;
-}
-
-@media screen and (max-width: 700px) {
-  .left-col {
-    width: 100%;
-    text-align: center;
-  }
-  #temperature {
-    font-size: 11em;
-    padding: .1em;
-
-  }
-  #powerSavingModeSwitch {
-    font-size: 1em;
-    margin-left: 1em;
-    margin-right:1em;
-    padding: 1em;
-    text-align: center;
-    width: 100%;
-  }
-
-  #PSM-buttons {
-    margin-left: 1em;
-    margin-right:1em;
-    padding: 1em;
-    text-align: center;
-  }
-  .right-col {
-    display: none;
-  }
-
-  .sml-screen-degrees {
-    display: block;
-    width: 100%;
-    background-color: black;
+#temperature-up {
+  background-color: #217524;
+    border: none;
     color: white;
-    margin-top: 1em;
+    padding: 15px 15px;
     text-align: center;
-    font-size: 2em;
-    line-height: 1.5em;
-  }
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius:50%;
+    width: 50px;
+    height: 50px;
+}
 
-  .display {
+#temperature-down {
+  background-color: #a42f26;
+    border: none;
+    color: white;
+    padding: 15px 15px;
     text-align: center;
-    width: 100%;
-    margin-left: 0;
-    margin-right: 0;
-  }
-
-  #powerSavingModeSwitch {
-    padding-right: 1em;
-    width: 100%;
-  }
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius:50%;
+    width: 50px;
+    height: 50px;
 }
 
-#energyColor.low-usage {
-  color: #27ae60;
+#temperature-reset {
+  background-color: #4f4c8b;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    cursor: pointer;
 }
 
-#energyColor.medium-usage {
-  color: #f1c40f;
+#powersavingmode-on {
+  background-color: #933668;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    cursor: pointer;
 }
 
-#energyColor.high-usage {
-  color: #c0392b;
+#powersavingmode-off {
+  background-color: #b34747;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    cursor: pointer;
+
 }
 
-#PSM-title.low-usage {
-  background-color: #27ae60;
-  margin: none;
-  width: 100%;
-}
-
-#PSM-title.medium-usage {
-  background-color: #f1c40f;
-  margin: none;
-  width: 100%;
-}
-
-#PSM-title.high-usage {
-  background-color: #c0392b;
-  margin: none;
-  width: 100%;
+.power-saving {
+  font-family: 'Bungee Inline';
+  background-color: #ff3399;
+    border: none;
+    color: white;
+    padding: 15px 169px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
 }
